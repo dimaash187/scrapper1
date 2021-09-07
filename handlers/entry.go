@@ -407,7 +407,7 @@ func DeleteJob(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	consumer.mu.Unlock()
-	http.Error(w, fmt.Sprintf("JobId %s not found", jobid), http.StatusBadRequest)
+	http.Error(w, fmt.Sprintf("JobId %s not found", jobid), http.StatusNotFound)
 }
 
 func Initialize(timeout int32) {
@@ -442,7 +442,7 @@ func GetJobStatus(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	http.Error(w, fmt.Sprintf("JobId %s not found", jobid), http.StatusBadRequest)
+	http.Error(w, fmt.Sprintf("JobId %s not found", jobid), http.StatusNotFound)
 }
 
 func GetJobResult(w http.ResponseWriter, r *http.Request) {
@@ -459,7 +459,7 @@ func GetJobResult(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	http.Error(w, fmt.Sprintf("JobId %s not found", jobid), http.StatusBadRequest)
+	http.Error(w, fmt.Sprintf("JobId %s not found", jobid), http.StatusNotFound)
 }
 
 func PostJobs(w http.ResponseWriter, r *http.Request) {
