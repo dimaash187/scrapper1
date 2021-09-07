@@ -16,6 +16,33 @@ Also a docker image [ app1 ] can be built with `make build-docker`.
 
 Then run the docker image: `docker run -p 8081:8081 scrapper1`
 
+## Running scenarios
+
+1. POSTING a new Job:
+
+`curl -X POST 'http://localhost:8001/jobs' -H "Content-Type: application/json" --data '{"urls":["http://4chan.org/","https://golang.org/"],"workers":2}'`
+
+
+2. Getting a job's status:
+
+`curl 'http://localhost:8001/jobs/047500fa-37e3-4a80-a9fe-fdda1e6f1150/status'`
+
+
+3. Getting a job's result:
+
+`curl 'http://localhost:8001/jobs/047500fa-37e3-4a80-a9fe-fdda1e6f1150/result'`
+
+
+4. Canceling a job:
+
+`curl -X DELETE 'http://localhost:8001/jobs/047500fa-37e3-4a80-a9fe-fdda1e6f1150'`
+
+
+5. Getting all jobs:
+
+`curl 'http://localhost:8001/all'`
+
+
 ## Running unit tests
 
 Run `make test` to execute the unit tests, WHICH WE DONT'T HAVE yet...
