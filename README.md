@@ -64,3 +64,14 @@ This way if this service is called [ HTTP request ] when no more workers are ava
 There is an extra functionality to cancel a running job [ see endpoint # 2 above ].
 
 And an extra endpoint to display all of the running jobs and their details.
+
+
+One of the things that can certainly be improved is the unit testsing [ or integration/functional testing ].
+The code needs to be designed with a smaller moving parts that can be tested individually. Also the overall functionality of the system needs to be tested.
+
+One difficulty with the automated testing is the fact that requests are made outside [ external HTTP requests to the Links to crawl URLs ]. 
+This behaviour is a somewhat difficulat to actually have properly tested without resorting to too much mocking.
+
+
+
+
